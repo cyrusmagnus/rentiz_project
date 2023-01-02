@@ -1,0 +1,159 @@
+.header
+    padding: clamp(1.25rem, 0.886rem + 1.82vw, 2.5rem) 0
+
+    // .header__container
+
+    &__container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 20px
+
+    // .header__logo
+
+    &__logo
+        max-width: 200px
+
+    // .header__navigation
+
+    &__navigation
+        display: flex
+        align-items: center
+        gap: clamp(1.25rem, -2.799rem + 8.44vw, 4.688rem)
+
+    // .header__menu
+
+    &__menu
+
+    // .header__buttons
+
+    &__buttons
+        display: flex
+        gap: 5px
+        
+    // .header__btn
+
+    &__btn
+        padding: 11px 20px
+        color: #fff
+        border: 1px solid $--accent-color
+        cursor: pointer
+        
+        +max(576px)
+            padding: 7px 15px
+.menu
+    +max(992px)
+        position: absolute
+        top: 0
+        left: -100vw
+        height: 100vh
+        width: 80vw
+        display: flex
+        overflow: auto
+        padding: 20px 0
+        background-color: $--accent-color
+        transition: left .2s
+
+        &._active
+            left: 0
+
+
+    // .menu-icon
+    
+    &-icon
+        display: none
+
+        +max(992px)
+            display: block
+            height: 18px
+            width: 30px
+            position: relative
+            cursor: pointer
+            z-index: 5
+
+            span
+                transition: all .3s ease 0s
+                top: calc(50% - 1px)
+                left: 0
+                position: absolute
+                width: 100%
+                height: 2px
+                background-color: #fff
+
+                &:first-child
+                    top: 0
+
+                &:last-child
+                    top: auto
+                    bottom: 0
+
+            &._active
+                span
+                    transform: scale(0)
+                    &:first-child
+                        transform: rotate(-45deg)
+                        top: calc(50% - 1px)
+
+                    &:last-child
+                        transform: rotate(45deg)
+                        bottom: calc(50% - 1px)
+
+    // .menu__body
+
+    &__body
+        display: flex
+        align-items: center
+        gap: 40px
+
+        +max(992px)
+            flex-direction: column
+            margin: auto
+
+    // .menu__item
+
+    &__item
+
+    // .menu__link
+
+    &__link
+        font-weight: 500
+        font-size: 16px
+        text-transform: capitalize
+        color: $--text-color
+        @include trans
+        position: relative
+
+        &::before
+            content: ''
+            height: 3px
+            position: absolute
+            bottom: -5px
+            left: 0
+            right: 0
+            background-color: $--accent-color
+            opacity: 0
+            visibility: hidden
+
+        +hover
+            color: #fff
+
+            &::before
+                opacity: 1
+                visibility: visible
+        
+        +max(992px)
+            line-height: 50px
+            font-size: 30px
+.login
+    +hover
+        background-color: $--accent-color
+    
+    +max(425px)
+        display: none
+
+.register
+    background-color: $--accent-color
+
+    +hover
+        background-color: transparent
+

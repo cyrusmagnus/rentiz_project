@@ -1,0 +1,14 @@
+$ff: 'Work Sans', sans-serif
+    
+$--bg-color: #121B25
+$--accent-color: #1AA090
+$--text-color: #D6D6D6
+
+
+@mixin hover
+    @media (any-hover: hover)
+        &:hover
+            @content
+
+@mixin trans
+    transition: color .2s, opacity .2s, background-color .2s

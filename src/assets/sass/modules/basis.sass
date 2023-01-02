@@ -1,0 +1,65 @@
+body
+    background-color: $--bg-color
+    font-family: $ff
+    font-weight: 400
+    color: #fff
+
+    &._lock
+        overflow: hidden
+
+    &::-webkit-scrollbar
+        width: 0.9375rem
+        // background-color: $color_2
+
+    &::-webkit-scrollbar-thumb
+        // background-color: $color_3
+
+[class*="__container"]
+    max-width: 1450px
+    margin: 0 auto
+    padding: 0 15px
+
+* img
+    max-width: 100%
+
+.text
+    font-size: 18px
+    line-height: 1.7
+    font-weight: 400
+
+.scroll
+    position: fixed
+    bottom: 72px
+    right: 20px
+    width: 30px
+    height: 30px
+    background-color: transparent
+    border: none
+    // border-top: 10px solid $color_4
+    // border-right: 10px solid $color_4
+    transform: rotate(-45deg)
+    opacity: 0
+    transition: all .2s
+    z-index: 1
+
+    +small
+        width: 30px
+        height: 30px
+        right: 2%
+
+    // .scroll__img
+    //     display: inline-flex
+    //     width: 50px
+    //     height: 50px
+    //     fill: $color_4
+    //     transform: rotate(-90deg)
+    //     transition: all .2s
+    //     cursor: pointer
+
+    &:hover
+        transform: translateY(-4px) rotate(-45deg) 
+
+    &.active
+        opacity: 1
+    
+    
