@@ -22,11 +22,35 @@ body
 * img
     max-width: 100%
 
+/*----General----*/
+
+.title
+    font-weight: 600
+    font-size: clamp(1.875rem, 1.548rem + 1.64vw, 3rem)
+    line-height: 1.26
+    text-transform: capitalize
+    color: #fff
+
 .text
     font-size: 18px
     line-height: 1.7
     font-weight: 400
 
+.link
+    display: inline-block
+    margin-top: 45px
+    padding: 22px 42px
+    background-color: $--accent-color
+    text-decoration: none
+    color: #fff
+    font-weight: 500
+    font-size: 24px
+    text-transform: capitalize
+    @include trans
+
+    +hover
+        background-color: #15786C
+        
 .scroll
     position: fixed
     bottom: 72px
@@ -61,5 +85,6 @@ body
 
     &.active
         opacity: 1
-    
+
+/*----General----*/
     

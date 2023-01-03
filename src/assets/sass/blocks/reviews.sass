@@ -1,0 +1,104 @@
+.reviews
+    position: relative
+    padding-bottom: clamp(1.875rem, -0.852rem + 13.64vw, 11.25rem)
+
+    .reviews-deco
+        position: absolute
+        z-index: -1
+        top: -500px
+        left: 0
+
+        +max(475px)
+            width: 300px
+
+    .swiper-wrapper
+        align-items: flex-start
+
+    // .reviews__container
+
+    &__container
+        max-width: 1020px
+        margin: 0 auto
+        position: relative
+        padding-top: 195px
+
+    // .reviews__quotes
+
+    &__quotes
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 260px
+        text-transform: capitalize
+        color: $--accent-color
+
+.reviews-slider
+    
+.slider-reviews
+
+    // .slider-reviews__slide
+
+    &__slide
+
+
+    // .slider-reviews__text
+
+    &__text
+        font-size: clamp(1.25rem, 1.032rem + 1.09vw, 2rem)
+        line-height: 1.57
+        text-transform: capitalize
+
+    // .slider-reviews__info
+
+    &__info
+        margin-top: 40px
+
+    // .slider-reviews__name
+
+    &__name
+        font-weight: 600
+        font-size: 22px
+        letter-spacing: 0.01em
+        text-transform: capitalize
+
+    // .slider-reviews__job
+
+    &__job
+        
+
+    // .slider-reviews__buttons
+
+    &__buttons
+        display: flex
+        align-items: center
+        gap: 70px
+        width: 115px
+        height: 60px
+        position: absolute
+        bottom: 0
+        right: 15px
+
+        &::before
+            content: ""
+            width: 1px
+            background: #353F49
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 50%
+
+.slider-reviews-btn
+    cursor: pointer
+
+    svg
+        fill: #fff
+
+    &.swiper-button-disabled
+        svg
+            fill: #767F89
+
+.slider-reviews-prev
+    transform: translateY(-3px) rotate(180deg)
+
+.swiper-button-next
+    

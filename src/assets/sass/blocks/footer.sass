@@ -1,0 +1,115 @@
+.footer
+    background-color: #1A242F
+    padding-top: clamp(1.875rem, -0.125rem + 10vw, 8.75rem)
+    
+    // .footer__main
+
+    &__main
+        padding-bottom: clamp(1.875rem, 0.784rem + 5.45vw, 5.625rem)
+
+    .main-footer__container
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        gap: clamp(1.875rem, -14.494rem + 26.19vw, 8.75rem)
+
+        +max(992px)
+            grid-template-columns: repeat(4, 1fr)
+
+        +max(600px)
+            display: flex
+            flex-direction: column
+            align-items: center
+            text-align: center
+
+    // .footer__block
+
+    &__block
+        +max(992px)
+            grid-column: 1/5
+
+            &:not(:first-child)
+                grid-row: 2/3
+                grid-column: auto
+    // .footer__link
+
+    &__link
+        
+
+    // .footer__text
+
+    &__text
+        margin: 22px 0 32px
+
+        +min(992px)
+            width: 340px
+
+    // .footer__socials
+
+    &__socials
+        display: flex
+        align-items: center
+        gap: 30px
+
+        +max(600px)
+            justify-content: center
+
+    // .footer__social
+
+    &__social
+        text-decoration: none
+
+        svg
+            fill: #555E68
+            transition: all .2s
+        
+        +hover
+            svg
+                fill: #fff
+        
+
+    // .footer__copyright
+
+    &__copyright
+        border-top: 1px solid #303A44
+        padding: 15px 0
+
+        .copyright__container
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            +max(690px)
+                flex-direction: column
+                gap: 30px
+                align-items: center
+    
+.links-footer
+
+    // .links-footer__header
+
+    &__header
+        font-weight: 600
+        font-size: 26px
+        letter-spacing: 0.01em
+        text-transform: capitalize
+        margin-bottom: 11px
+
+    // .links-footer__list
+
+    &__list
+        
+
+    // .links-footer__item
+
+    &__item
+        
+
+    // .links-footer__link
+
+    &__link
+        white-space: nowrap
+        @include trans
+
+        +hover
+            color: #fff
+

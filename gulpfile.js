@@ -27,6 +27,7 @@ const path = {
         html: distPath,
         css: distPath + "assets/css/",
         js: distPath + "assets/js/",
+        svg: distPath + "assets/images/icons/",
         images: distPath + "assets/images/",
         fonts: distPath + "assets/fonts/"
     },
@@ -34,6 +35,7 @@ const path = {
         html: srcPath + "*.html",
         css: srcPath + "assets/sass/*.sass",
         js: srcPath + "assets/js/*.js",
+        svg: srcPath + "assets/images/icons/**/*.svg",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
@@ -41,6 +43,7 @@ const path = {
         html: srcPath + "**/*.html",
         css: srcPath + "assets/sass/**/*.sass",
         js: srcPath + "assets/js/**/*.js",
+        svg: srcPath + "assets/images/icons/**/*.svg",
         images: srcPath + "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
         fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}"
     },
@@ -131,8 +134,8 @@ function images() {
         .pipe(imagemin(
             [
                 imagemin.gifsicle({interlaced: true}),
-                imagemin.mozjpeg({quality: 100, progressive: true}),
-                imagemin.optipng({optimizationLevel: 0}),
+                imagemin.mozjpeg({quality: 75, progressive: true}),
+                imagemin.optipng({optimizationLevel: 5}),
                 imagemin.svgo({
                     plugins: [
                         {removeViewBox: true},
@@ -159,7 +162,6 @@ function watchFiles() {
     gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.fonts], fonts);
-
 }
 
 const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));

@@ -1,7 +1,18 @@
 .page
 
 .hero
-    margin-top: clamp(1.875rem, 1.057rem + 4.09vw, 4.688rem)
+    margin-top: clamp(1.25rem, 0.25rem + 5vw, 4.688rem)
+    padding-bottom: clamp(1.25rem, -0.023rem + 6.36vw, 5.625rem)
+    position: relative
+
+    .hero-deco
+        position: absolute
+        bottom: -150px
+        right: 0
+        z-index: -1
+
+        +max(576px)
+            height: 300px
 
     // .hero__container
 
@@ -9,6 +20,9 @@
         display: flex
         justify-content: space-between
         align-items: center
+
+        +max(992px)
+            flex-direction: column
 
     // .hero__content
 
@@ -38,10 +52,17 @@
         margin-top: 60px
         position: absolute
 
+        +max(992px)
+            width: 100%
+            position: static
+
     // .hero__img
 
     &__img
         flex: 0 0 calc(700px / 1420px * 100%)
+
+        +between(768px, 992px)
+            display: none
 
 .text
 
@@ -51,10 +72,18 @@
     grid-template-columns: 1fr 1fr 1fr 165px
     color: #000
 
+    +max(576px)
+        grid-template-columns: repeat(3, 1fr)
+        padding: 10px
+        height: auto
+
+    +max(475px)
+        grid-template-columns: 1fr
+        gap: 10px
+
     // .filter__block
 
     &__block
-        position: relative
         &:nth-child(2)
             border-right: 1px solid #E8E8E8
             border-left: 1px solid #E8E8E8
@@ -62,7 +91,7 @@
     // .filter__btn
 
     &__btn
-        padding: 5px
+        padding: 4px
 
         button
             background-color: $--accent-color
@@ -74,14 +103,23 @@
             text-transform: capitalize
             color: #fff
             cursor: pointer
-        
+            @include trans
+            padding: 10px
+
+            &:active
+                background-color: #15786C
+
+        +between(576px, 475px)
+            grid-column: 1/4
 
 .block-filter
+    position: relative
+    cursor: pointer
 
     // .block-filter__button
 
     &__button
-        padding-left: 40px
+        padding: 0 clamp(1.25rem, 0.886rem + 1.82vw, 2.5rem)
         display: flex
         flex-direction: column
         justify-content: center
@@ -105,7 +143,11 @@
     &__icon
         width: 10px
         height: 5px
-        background: url('../images/arrow-dropdown.svg') center no-repeat
+        background: url('../images/icons/arrow-dropdown.svg') center no-repeat
+        transition: transform .2s
+
+        &._active
+            transform: rotate(-180deg)
 
     // .block-filter__value
 
@@ -119,17 +161,32 @@
 
     &__dropdown
         position: absolute
+        z-index: 3
         top: 105%
         left: 0
         right: 0
         background-color: #fff
-        border-radius: 15px
+        border-radius: 5px
+        overflow: hidden
+        opacity: 0
+        visibility: hidden
+        pointer-events: none
+        transition: all .2s
+        box-shadow: 0 0 1px 1px $--bg-color
+
+        &._active
+            opacity: 1
+            visibility: visible
+            pointer-events: all
+            transform: translateX(5px)
 
     // .block-filter__item
 
     &__item
         padding: 10px
         @include trans
+        cursor: pointer
+        text-transform: capitalize
 
         +hover
             background-color: #858585

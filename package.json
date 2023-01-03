@@ -17,7 +17,6 @@
         "gulp-rigger": "^0.5.8",
         "gulp-sass": "^5.1.0",
         "gulp-strip-css-comments": "^2.0.0",
-        "gulp-svg-sprites": "^4.1.2",
         "gulp-uglify": "^3.0.2",
         "panini": "^1.7.2",
         "sass": "^1.57.1"

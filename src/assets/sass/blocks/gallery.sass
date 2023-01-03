@@ -1,0 +1,75 @@
+.gallery
+    background: linear-gradient(270deg, #1A242F 0.01%, rgba(26, 36, 47, 0) 82.97%)
+    padding: clamp(1.875rem, -0.489rem + 11.82vw, 10rem) 0
+
+    // .gallery__container
+
+    &__container
+        display: flex
+        align-items: center
+        gap: 63px
+
+        +max(992px)
+            flex-direction: column
+
+    // .gallery__box
+
+    &__box
+        display: flex
+        align-items: center
+        justify-content: space-between
+        gap: 20px
+        width: calc(720px / 1420px * 100%)
+
+        +max(992px)
+            width: 100%
+
+    // .gallery__item
+
+    &__item
+        flex: 0 0 47%
+        width: calc(350px / 1420px * 100%)
+        aspect-ratio: 7/11
+
+        .swiper-wrapper
+            position: relative
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    // .gallery__info
+
+    &__info
+        +max(475px)
+            text-align: center
+
+    // .gallery__title
+
+    &__title
+        +min(992px)
+            max-width: 520px
+
+    // .gallery__text
+
+    &__text
+        margin-top: 22px
+
+    // .gallery__link
+
+    &__link
+        display: inline-block
+        margin-top: 45px
+        padding: 22px 42px
+        background-color: $--accent-color
+        text-decoration: none
+        color: #fff
+        font-weight: 500
+        font-size: 24px
+        text-transform: capitalize
+
+.title
+    
+.text
+    
